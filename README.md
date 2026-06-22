@@ -46,8 +46,8 @@ WAV files exported by other tools have one.
 | Platform      | Status                              |
 |---------------|-------------------------------------|
 | **Linux**     | Full support (Flatpak & source)     |
-| **macOS**     | Builds from source (no CD burning)  |
-| **Windows**   | Not tested (help wanted)            |
+| **macOS**     | Unknown  |
+| **Windows**   | Not planned             |
 
 ---
 
@@ -56,7 +56,7 @@ WAV files exported by other tools have one.
 ### Download a release binary (simplest)
 
 Grab the latest `tuiplay` binary from the
-[Releases](https://github.com/malagatech/tuiplay/releases) page, make it
+[Releases](https://github.com/jacobjuneau6/TUIplay/releases) page, make it
 executable, and run it.
 
 ```bash
@@ -76,17 +76,17 @@ chmod +x tuiplay
 ### Flatpak (sandboxed)
 
 Download the `.flatpakref` file from the
-[Releases](https://github.com/malagatech/tuiplay/releases) page and install it:
+[Releases](https://github.com/jacobjuneau6/TUIplay/releases) page and install it:
 
 ```bash
-flatpak install --from https://github.com/malagatech/tuiplay/releases/latest/download/com.malagatech.tuiplay.flatpakref
+flatpak install --from https://github.com/jacobjuneau6/TUIplay/releases/latest/download/com.malagatech.tuiplay.flatpakref
 flatpak run com.malagatech.tuiplay
 ```
 
 Or grab the `.flatpak` bundle and side-load it:
 
 ```bash
-curl -LO https://github.com/malagatech/tuiplay/releases/latest/download/tuiplay.flatpak
+curl -LO https://github.com/jacobjuneau6/TUIplay/releases/latest/download/tuiplay.flatpak
 flatpak install --bundle tuiplay.flatpak
 ```
 
@@ -253,16 +253,7 @@ flatpak build-bundle \
 cp flatpak/com.malagatech.tuiplay.flatpakref .
 ```
 
-Upload `tuiplay.flatpak` and `com.malagatech.tuiplay.flatpakref` to the
-GitHub Release alongside the binary.
 
-### 5. (Optional) host your own Flatpak repo
-
-If you'd rather host a repository so users get automatic updates, put the
-built repo on a static host (e.g. GitHub Pages) and point the `.flatpakref`
-`Url` field at it.
-
----
 
 ## License
 
