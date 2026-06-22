@@ -24,3 +24,5 @@ symphonia = { version = "0.5", features = [
     "ogg"
 ] }
 tokio = { version = "1", features = ["full"] }
+ogg = "0.9"
+opus = "0.3"

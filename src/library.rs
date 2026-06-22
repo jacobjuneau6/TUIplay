@@ -1,9 +1,7 @@
 use rusqlite::Connection;
 use crate::models::Track;
 
-pub fn load_tracks(
-    conn: &Connection
-) -> Vec<Track> {
+pub fn load_tracks(conn: &Connection) -> Vec<Track> {
     let mut stmt = conn
         .prepare(
             "
@@ -17,7 +15,7 @@ pub fn load_tracks(
                 year,
                 duration
             FROM tracks
-            "
+            ",
         )
         .unwrap();
     stmt.query_map([], |r| {

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.malagatech.tuiplay</id>
+  <name>TUIplay</name>
+  <summary>Terminal music player with queue, playlists &amp; CD burning</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <description>
+    <p>
+      TUIplay is a fast, keyboard-driven music player for the terminal.
+      Browse your library, queue up tracks, edit metadata, save playlists,
+      and export or burn audio CDs — all without leaving the command line.
+    </p>
+    <ul>
+      <li>Playback: Opus, MP3, FLAC, WAV, AAC/M4A, Vorbis/OGG</li>
+      <li>Queue &amp; playlist management with JSON persistence</li>
+      <li>Inline metadata editor (title, artist, album, genre)</li>
+      <li>Resume tracks from where you left off</li>
+      <li>Export playlists as Red Book CD images (WAV + CUE)</li>
+      <li>Burn directly to CD-R via cdrdao or wodim</li>
+      <li>Copy tracks to any folder (USB keys, etc.)</li>
+      <li>Vim-style j/k navigation</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.malagatech.tuiplay.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Library browsing with queue panel</caption>
+      <image>https://raw.githubusercontent.com/malagatech/tuiplay/main/screenshots/library.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/malagatech/tuiplay</url>
+  <url type="bugtracker">https://github.com/malagatech/tuiplay/issues</url>
+
+  <releases>
+    <release version="0.1.0" date="2026-06-22">
+      <description>
+        <p>Initial release</p>
+        <ul>
+          <li>Multi-format playback (Opus, MP3, FLAC, WAV, AAC, Vorbis)</li>
+          <li>Queue &amp; playlist system</li>
+          <li>Metadata editor</li>
+          <li>CD image export and burning</li>
+          <li>Resume playback</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+
+  <developer id="com.malagatech">
+    <name>MalagaTech</name>
+  </developer>
+</component>

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=TUIplay
+Comment=Terminal music player with queue, playlists, metadata editing & CD burning
+Exec=tuiplay
+Terminal=true
+Type=Application
+Categories=Audio;AudioVideo;Player;ConsoleOnly;
+Keywords=music;player;tui;terminal;audio;opus;mp3;flac;
+Icon=com.malagatech.tuiplay

@@ -1,0 +1,6 @@
+[Flatpak Ref]
+Title=TUIplay
+Name=com.malagatech.tuiplay
+Branch=stable
+Url=https://github.com/malagatech/tuiplay/releases/latest/download/tuiplay.flatpakrepo
+IsRuntime=false
