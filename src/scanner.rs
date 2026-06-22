@@ -1,6 +1,6 @@
 use std::path;
 
-use anyhow::{Ok, Result};
+use anyhow::Result;
 use rusqlite::Connection;
 use tokio::fs::read;
 use walkdir::WalkDir;
@@ -36,9 +36,19 @@ pub fn scan_folder(
             continue;
         }
 
-        let meta = read_metadata(
+        let meta = match read_metadata(
             path.to_str().unwrap()
-        )?;
+        ) {
+            Ok(m) => m,
+            Err(e) => {
+                eprintln!(
+                    "Skipping {}: {}",
+                    path.display(),
+                    e
+                );
+                continue;
+            }
+        };
 
         conn.execute(
             "

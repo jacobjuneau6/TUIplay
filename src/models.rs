@@ -7,5 +7,5 @@ pub struct Track {
     pub album: String,
     pub genre: String,
     pub year: Option<i32>,
-    pub duration: u64,
+    pub duration: Option<u64>,
 }
