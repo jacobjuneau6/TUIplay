@@ -7,7 +7,6 @@ A fast, keyboard-driven terminal music player and library manager.  Browse your
 collection, queue up tracks, edit metadata tags, save playlists, and burn audio
 CDs — all without leaving the command line.
 
-![License](https://img.shields.io/badge/license-MIT-blue)
 ![Platform](https://img.shields.io/badge/platform-Linux-brightgreen)
 ![Language](https://img.shields.io/badge/language-Rust-orange)
 
