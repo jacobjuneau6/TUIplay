@@ -1,3 +1,6 @@
+# NOTE
+  The flatpak is currently not working so use the Release Binary method for now.
+
 # TUIplay
 
 A fast, keyboard-driven terminal music player and library manager.  Browse your
