@@ -32,6 +32,7 @@ use ratatui::Terminal;
 
 mod app;
 mod cd_writer;
+mod config;
 mod db;
 mod editor;
 mod library;
@@ -80,7 +81,7 @@ fn main() -> Result<()> {
     res
 }
 
-// ── Helper: try XDG_MUSIC_DIR, then prompt ──────────────────────────────
+// ── Helpers: XDG_MUSIC_DIR → config → prompt → save ──────────────────
 
 /// Returns the value of `$XDG_MUSIC_DIR` if it is set, non-empty, and the
 /// directory exists.  Otherwise returns `None`.
@@ -95,7 +96,8 @@ fn xdg_music_dir() -> Option<PathBuf> {
 
 /// Resolve the starting music directory:
 /// 1. If `$XDG_MUSIC_DIR` is set and the directory exists, use it.
-/// 2. Otherwise prompt the user immediately.
+/// 2. Otherwise try the saved config file.
+/// 3. Otherwise prompt the user (and persist the answer).
 ///
 /// If the chosen directory ends up empty, `main()` will re-prompt.
 fn resolve_music_dir() -> PathBuf {
@@ -103,12 +105,19 @@ fn resolve_music_dir() -> PathBuf {
         eprintln!("Using XDG_MUSIC_DIR: {}", dir.display());
         return dir;
     }
-    eprintln!("XDG_MUSIC_DIR is not set or does not point to an existing directory.");
+
+    if let Some(dir) = config::load_music_dir() {
+        eprintln!("Using saved music directory: {}", dir.display());
+        return dir;
+    }
+
+    eprintln!("XDG_MUSIC_DIR is not set and no saved directory found.");
     prompt_music_dir()
 }
 
 /// Prompt the user on stderr/stdin for a music directory path.
-/// Loops until a valid, existing directory is entered.
+/// Loops until a valid, existing directory is entered, then persists
+/// the choice to the config file.
 /// Exits the process on I/O errors.
 fn prompt_music_dir() -> PathBuf {
     loop {
@@ -137,6 +146,7 @@ fn prompt_music_dir() -> PathBuf {
             continue;
         }
 
+        config::save_music_dir(&path);
         return path;
     }
 }
