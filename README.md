@@ -62,9 +62,9 @@ Grab the latest `tuiplay` binary from the
 executable, and run it.
 
 ```bash
-curl -LO https://github.com/malagatech/tuiplay/releases/latest/download/tuiplay
-chmod +x tuiplay
-./tuiplay
+curl -L -o TUIplay https://github.com/jacobjuneau6/TUIplay/releases/latest/download/TUIplay
+chmod +x TUIplay
+./TUIplay
 ```
 
 **System dependencies** (pre-installed on most desktops):
